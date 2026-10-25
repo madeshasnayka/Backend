@@ -1,0 +1,100 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a, #312e81);
+            overflow: hidden;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 800px;
+            padding: 50px;
+            text-align: center;
+            border-radius: 25px;
+
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(20px);
+
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: white;
+        }
+
+        p {
+            color: #d1d5db;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+        }
+
+        @media(max-width:768px) {
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .card {
+                padding: 30px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>🚀 Welcome User</h1>
+
+        <p>
+            Build scalable web applications using
+            Node.js, Express, Render and MongoDB.
+        </p>
+
+        <a href="/about" class="btn">
+            About Us
+        </a>
+
+    </div>
+
+</body>
+
+</html>

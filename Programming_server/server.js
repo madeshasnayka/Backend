@@ -1,24 +1,34 @@
-const express=require("express");
-const port= process.env.PORT || 3000;
-const path=require("path")
-const app=express()
-app.get('/',(req,res)=>{
-    res.send("Welcome user",200);
-})
-app.get('/about',(req,res)=>{
-    res.send("this is about page");
-})
-app.get('/login',(req,res)=>{
-    res.send("this is login page");
-})
-app.get('/logout',(req,res)=>{
-    res.send("this is logout page");
-})
-app.use((req, res) => {
-    res.status(404).sendFile(
-        path.join(__dirname, '404.html')
+const express = require("express");
+const path = require("path");
+
+const app = express();
+
+app.get("/", (req,res)=>{
+    res.sendFile(
+        path.join(__dirname,"public/pages/home.html")
     );
 });
-app.listen(port,()=>{
-    console.log(`the server is running in the port ${port}.`)
-})
+
+app.get("/about",(req,res)=>{
+    res.sendFile(
+        path.join(__dirname,"public/pages/about.html")
+    );
+});
+
+app.get("/login",(req,res)=>{
+    res.sendFile(
+        path.join(__dirname,"public/pages/login.html")
+    );
+});
+
+app.get("/logout",(req,res)=>{
+    res.sendFile(
+        path.join(__dirname,"public/pages/logout.html")
+    );
+});
+
+app.use((req,res)=>{
+    res.status(404).sendFile(
+        path.join(__dirname,"public/pages/404.html")
+    );
+});
