@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.get("/", (req,res)=>{
@@ -32,3 +32,6 @@ app.use((req,res)=>{
         path.join(__dirname,"public/pages/404.html")
     );
 });
+app.listen(port,()=>{
+    console.log(`the server is running in the port${port}`)
+})
