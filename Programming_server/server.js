@@ -32,6 +32,6 @@ app.use((req,res)=>{
         path.join(__dirname,"public/pages/404.html")
     );
 });
-app.listen(port,()=>{
+app.listen(PORT,()=>{
     console.log(`the server is running in the port${port}`)
 })
