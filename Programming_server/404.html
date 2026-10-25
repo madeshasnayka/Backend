@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>404 | Page Not Found</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <style>
@@ -22,42 +26,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
             overflow: hidden;
+            background: linear-gradient(135deg,
+                    #0f172a,
+                    #1e293b,
+                    #312e81);
+            position: relative;
         }
 
-        /* Floating background circles */
+        /* Floating Background */
 
         .circle {
             position: absolute;
             border-radius: 50%;
-            filter: blur(10px);
+            filter: blur(20px);
             animation: float 8s ease-in-out infinite;
         }
 
         .circle:nth-child(1) {
-            width: 250px;
-            height: 250px;
-            background: #3b82f660;
-            top: 10%;
-            left: 10%;
+            width: 260px;
+            height: 260px;
+            background: rgba(59, 130, 246, .4);
+            top: 8%;
+            left: 6%;
         }
 
         .circle:nth-child(2) {
-            width: 180px;
-            height: 180px;
-            background: #8b5cf660;
+            width: 200px;
+            height: 200px;
+            background: rgba(168, 85, 247, .4);
             bottom: 10%;
-            right: 10%;
+            right: 8%;
             animation-delay: 2s;
         }
 
         .circle:nth-child(3) {
-            width: 120px;
-            height: 120px;
-            background: #06b6d460;
+            width: 140px;
+            height: 140px;
+            background: rgba(6, 182, 212, .4);
             top: 20%;
-            right: 25%;
+            right: 20%;
             animation-delay: 4s;
         }
 
@@ -65,47 +73,100 @@
 
             0%,
             100% {
-                transform: translateY(0px);
+                transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-25px);
+                transform: translateY(-30px);
             }
         }
 
+        /* Container */
+
         .container {
-            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
             z-index: 10;
         }
 
+        /* Card */
+
         .card {
             width: 700px;
-            max-width: 90%;
-            padding: 60px;
-            text-align: center;
+            max-width: 100%;
 
             background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(14px);
+            backdrop-filter: blur(15px);
+
             border: 1px solid rgba(255, 255, 255, 0.15);
 
-            border-radius: 25px;
+            border-radius: 30px;
+
+            padding: 60px;
+
+            text-align: center;
 
             box-shadow:
-                0 25px 50px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                0 25px 50px rgba(0, 0, 0, .4),
+                inset 0 1px 0 rgba(255, 255, 255, .2);
 
-            transform-style: preserve-3d;
+            animation: cardFloat 5s ease-in-out infinite;
         }
+
+        @keyframes cardFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Rocket */
+
+        .rocket {
+            display: block;
+            font-size: 70px;
+            margin-bottom: 15px;
+            animation: rocketMove 3s ease-in-out infinite;
+        }
+
+        @keyframes rocketMove {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* 404 Number */
 
         .error-number {
             font-size: 9rem;
             font-weight: 800;
-            background: linear-gradient(45deg, #60a5fa, #38bdf8, #a855f7);
+
+            background: linear-gradient(45deg,
+                    #60a5fa,
+                    #38bdf8,
+                    #a855f7);
+
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
 
             text-shadow:
-                0 0 30px rgba(96, 165, 250, 0.5);
+                0 0 30px rgba(96, 165, 250, .5);
+
+            margin-bottom: 10px;
 
             animation: pulse 2s infinite;
         }
@@ -124,18 +185,24 @@
 
         p {
             color: #cbd5e1;
-            margin-bottom: 35px;
-            line-height: 1.7;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-inline: auto;
         }
+
+        /* Button */
 
         .btn {
             display: inline-block;
-            padding: 14px 35px;
             text-decoration: none;
-            color: white;
-            font-weight: 600;
+
+            padding: 15px 35px;
 
             border-radius: 50px;
+
+            color: white;
+            font-weight: 600;
 
             background: linear-gradient(135deg,
                     #3b82f6,
@@ -148,27 +215,91 @@
         }
 
         .btn:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
+
             box-shadow:
-                0 20px 40px rgba(59, 130, 246, .5);
+                0 15px 35px rgba(59, 130, 246, .6);
         }
 
-        .rocket {
-            font-size: 60px;
-            display: block;
-            margin-bottom: 20px;
-            animation: rocket 3s ease-in-out infinite;
-        }
+        /* Tablet */
 
-        @keyframes rocket {
+        @media(max-width:768px) {
 
-            0%,
-            100% {
-                transform: translateY(0px);
+            .card {
+                padding: 40px 30px;
             }
 
-            50% {
-                transform: translateY(-15px);
+            .error-number {
+                font-size: 6rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            p {
+                font-size: .95rem;
+            }
+
+            .rocket {
+                font-size: 55px;
+            }
+
+            .circle:nth-child(1) {
+                width: 180px;
+                height: 180px;
+            }
+
+            .circle:nth-child(2) {
+                width: 150px;
+                height: 150px;
+            }
+
+            .circle:nth-child(3) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* Mobile */
+
+        @media(max-width:480px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+
+            .rocket {
+                font-size: 45px;
+            }
+
+            .error-number {
+                font-size: 4.5rem;
+                line-height: 1;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: .9rem;
+                margin-bottom: 25px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+                padding: 14px;
+            }
+
+            .circle:nth-child(3) {
+                display: none;
             }
         }
     </style>
@@ -186,15 +317,14 @@
 
             <span class="rocket">🚀</span>
 
-            <div class="error-number">
-                404
-            </div>
+            <div class="error-number">404</div>
 
             <h2>Oops! Page Not Found</h2>
 
             <p>
-                The page you're looking for seems to have drifted
-                into another galaxy. Let's get you back to safety.
+                The page you're looking for appears to have drifted
+                into another galaxy. Don't worry, we'll help you
+                navigate back to safety.
             </p>
 
             <a href="/" class="btn">
